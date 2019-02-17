@@ -37,7 +37,13 @@ public class MainActivity extends AppCompatActivity
         // Check Result of Criteria 1 - Must be 4 or greater
         EditText numOfQsEditText = findViewById(R.id.numOfQsEditTextView);
         String stringNumOfQs = numOfQsEditText.getText().toString();
-        int intNumOfQs = Integer.parseInt(stringNumOfQs);
+        int intNumOfQs;
+        try {
+            intNumOfQs = Integer.parseInt(stringNumOfQs);
+        }
+        catch (NumberFormatException e) {
+            intNumOfQs = 0;
+        }
         if(intNumOfQs >= 4)
         {
             currentScore ++;
