@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">App Grader</string>
     <string name="identifer">Student Name or Number</string>
-    <string name="Criteria1">1.  App contains 4 - 10 questions</string>
+    <string name="Criteria1">1.  How many questions does the app contain? (Please enter a number)</string>
     <string name="Criteria2">2.  Includes at least one of each:</string>
     <string name="Criteria3">3.  Checkboxes are only used for questions with multiple right answers. Radio buttons are only used for questions with a single right answer.</string>
     <string name="Criteria4">4.  App includes a button for the user to submit their answers and receive a score.</string>

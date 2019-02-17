@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
-    int currentScore = 0;
+   private int currentScore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -21,8 +21,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-
 
     /**
      * This method is called when the submit button is clicked.
@@ -36,9 +34,11 @@ public class MainActivity extends AppCompatActivity
         String nameOrNumber = nameEditText.getText().toString();
         Log.i("MainActivity", "Student ID is " + nameOrNumber);
 
-        // Check Result of Criteria 1 - True/False
-        RadioButton c1RadioButton1 = findViewById(R.id.c1RadioButton1);
-        if(c1RadioButton1.isChecked())
+        // Check Result of Criteria 1 - Must be 4 or greater
+        EditText numOfQsEditText = findViewById(R.id.numOfQsEditTextView);
+        String stringNumOfQs = numOfQsEditText.getText().toString();
+        int intNumOfQs = Integer.parseInt(stringNumOfQs);
+        if(intNumOfQs >= 4)
         {
             currentScore ++;
             Log.i("MainActivity", "Criteria 1: Passed!");
@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity
 
 
         // Check Result of Criteria 6 - Check box (at least 4 need to be checked to get one point)
-        // TODO surely there's a nicer way to loop through and do the same thing?
         CheckBox c6checkbox1 = findViewById(R.id.c6checkbox1);
         CheckBox c6checkbox2 = findViewById(R.id.c6checkbox2);
         CheckBox c6checkbox3 = findViewById(R.id.c6checkbox3);
@@ -119,26 +118,37 @@ public class MainActivity extends AppCompatActivity
 
         //check if all 3 checkboxes have been checked
         int c6checkboxcounter = 0;
-        if(c6checkbox1.isChecked())
-        {c6checkboxcounter ++;}
-        if(c6checkbox2.isChecked())
-        {c6checkboxcounter ++;}
-        if(c6checkbox3.isChecked())
-        {c6checkboxcounter ++;}
-        if(c6checkbox4.isChecked())
-        {c6checkboxcounter ++;}
-        if(c6checkbox5.isChecked())
-        {c6checkboxcounter ++;}
-        if(c6checkbox6.isChecked())
-        {c6checkboxcounter ++;}
-        if(c6checkbox7.isChecked())
-        {c6checkboxcounter ++;}
-        if(c6checkbox8.isChecked())
-        {c6checkboxcounter ++;}
-        if(c6checkbox9.isChecked())
-        {c6checkboxcounter ++;}
+        if(c6checkbox1.isChecked()) {
+            c6checkboxcounter ++;
+        }
+        if(c6checkbox2.isChecked()) {
+            c6checkboxcounter ++;
+        }
+        if(c6checkbox3.isChecked()) {
+            c6checkboxcounter ++;
+        }
+        if(c6checkbox4.isChecked()) {
+            c6checkboxcounter ++;
+        }
+        if(c6checkbox5.isChecked()) {
+            c6checkboxcounter ++;
+        }
+        if(c6checkbox6.isChecked()) {
+            c6checkboxcounter ++;
+        }
+        if(c6checkbox7.isChecked()) {
+            c6checkboxcounter ++;
+        }
+        if(c6checkbox8.isChecked()) {
+            c6checkboxcounter ++;
+        }
+        if(c6checkbox9.isChecked()) {
+            c6checkboxcounter ++;
+        }
         if(c6checkbox10.isChecked())
-        {c6checkboxcounter ++;}
+        {
+            c6checkboxcounter ++;
+        }
 
         if (c6checkboxcounter >=4){
             currentScore ++;
@@ -232,7 +242,6 @@ public class MainActivity extends AppCompatActivity
             Log.i("MainActivity", "Criteria 15: Passed!");
 
         }
-
 
 
         if(currentScore >= 15)
